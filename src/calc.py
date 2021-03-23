@@ -1,4 +1,5 @@
 from parsec import *
+import parsec
 import operator
 
 id_ = word()
@@ -19,7 +20,7 @@ def eval_binary(op, l, r):
 
 
 def _group_part():
-    return or_(add_exr(), mod_expr(), multiply_expr(), group_expr(), float_()).name("_group_part")
+    return or_(add_expr(), mod_expr(), multiply_expr(), group_expr(), float_()).name("_group_part")
 
 
 def group_expr():
